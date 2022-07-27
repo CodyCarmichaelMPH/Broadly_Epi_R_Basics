@@ -5,7 +5,7 @@ pacman::p_load(
 )
 
 # XDA on non-text data
-Rate_Per_100k <- read.csv("C:/Users/CodyC/Documents/GitHub/R_Basics/Broadly_Epi_R_Basics/How_To_Read_Excel_CSV/DataSets/table3.csv")
+Rate_Per_100k <- read.csv("table3.csv")
 
 #We have an index called X which we don't need, so we can remove it.
 
