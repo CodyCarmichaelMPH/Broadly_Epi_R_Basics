@@ -67,4 +67,4 @@ Rate_Per_100k$Count <- round(Rate_Per_100k$Count, 3)
 #Create interactive graph using Plotly
 plotly::plot_ly(data = Rate_Per_100k, x = ~RegYear, y = ~Count, color = ~AGAB) %>%
   add_lines()  %>% 
-  layout( title = "Interactive Timeseries: Suicides by Sex and Year, 1970-2018" , xaxis = list(title = 'Registration Year'),yaxis = list(title = 'Count'))
+  layout( title = "Interactive Timeseries: Suicides by Sex and Year, 1970-2018" , xaxis = list(title = 'Registration Year'),yaxis = list(title = 'Rate per 100k'))
