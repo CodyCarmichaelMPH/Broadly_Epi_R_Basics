@@ -40,13 +40,13 @@ Cholera_Distance <- Group_By_Distance(Dis_Data, "Cholera")
 ## If we just want to do things quick, cor will provide quick correlation. 
 cor(Flu_Distance$Distance.from.Well.A, Flu_Distance$count_A)
 cor(Cholera_Distance$Distance.from.Well.A, Cholera_Distance$count_A)
-cor(NED_Distance$Distance.from.Well.A, NED_Distance$count_A)
+
 # Create the scatterplot showing the trend
 Flu_Static <- ggplot(Flu_Distance, aes(x = Distance.from.Well.A, y = count_A)) +
   geom_point() +  # Add scatterplot points
   geom_smooth(method = "lm", se = FALSE) +  # Add a linear regression line without confidence interval
   scale_x_continuous(limits = c(0, 25),breaks = 0:25) +  # Set X-axis breaks every 1 mile
-  scale_y_continuous(limits = c(0, 25), breaks = 0:25) +  # Set Y-axis limits and breaks every 1 mile
+  scale_y_continuous(limits = c(0, 25), breaks = 0:25) +  
   labs(title = "Correlation between Distance from Well A and Count of Influenza Cases",
        x = "Distance from Well A (miles)",
        y = "Count of Influenza Cases") +
@@ -57,7 +57,7 @@ Cholera_Static <- ggplot(Cholera_Distance, aes(x = Distance.from.Well.A, y = cou
   geom_point() +  # Add scatterplot points
   geom_smooth(method = "lm", se = FALSE) +  # Add a linear regression line without confidence interval
   scale_x_continuous(limits = c(0, 25),breaks = 0:25) +  # Set X-axis breaks every 1 mile
-  scale_y_continuous(limits = c(0, 25), breaks = 0:25) +  # Set Y-axis limits and breaks every 1 mile
+  scale_y_continuous(limits = c(0, 25), breaks = 0:25) +  
   labs(title = "Correlation between Distance from Well A and Count of Cholera Cases",
        x = "Distance from Well A (miles)",
        y = "Count of Cholera Cases") +
@@ -83,10 +83,6 @@ Cholera_Interactive <- plot_ly(Cholera_Distance, x = ~Distance.from.Well.A, y = 
 
 # Render the plot
 Cholera_Interactive
-
-
-
-
 
 
 
